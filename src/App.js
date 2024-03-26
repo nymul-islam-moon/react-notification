@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react";
-import Countries from "./components/Countries";
+import Posts from "./components/Posts";
+import Search from "./components/Search";
+import Navbar from "./components/Navbar";
 
 const url = "https://restcountries.com/v3.1/all";
 
@@ -31,11 +33,12 @@ function App() {
 
   return (
     <>
-      <h1>Notification</h1>
-
+      {/*<h1>Country App</h1>*/}
+      <Navbar />
+      <Search />
       {isLoading && <h2>Loading...</h2>}
       {error && <h2>{error.message}</h2>}
-      {countries && <Countries countries={countries}/>}
+      {countries && <Posts countries={countries}/>}
     </>
   );
 }
